@@ -11,7 +11,7 @@
             <table>
                 <tr>
                     <td>ชื่อ</td>
-                    <td><input type="text" width="20%"/></td>
+                    <td><input type="text" width="20"/></td>
                 </tr>
                 <tr>
                     <td>สกุล</td>
@@ -19,7 +19,7 @@
                 </tr>
                 <tr>
                     <td>วัน/เดือน/ปีเกิด</td>
-                    <td><input type="date"/></td>
+                    <td><input type="date" name="date"></td>
                 </tr>
                 <tr>
                     <td>อายุ</td>
@@ -30,11 +30,11 @@
                     <td>
                         <input id="radio_male"
                                 type="radio"
-                                name="same_radio"/>
+                                name="same_radio_gender"/>
                         <label for="radio_male">ชาย</label>
                         <input id="radio_female"
                                 type="radio"
-                                name="same_radio"/>
+                                name="same_radio_gender"/>
                         <label for="radio_female">หญิง</label>
                     </td>
                 </tr>
@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <td>ที่อยู่</td>
-                    <td><textarea row ="4"></textarea></td>
+                    <td><textarea rows ="4"></textarea></td>
                 </tr>
                 <tr>
                     <td>สีที่ชอบ</td>
@@ -54,6 +54,17 @@
                             value=""
                             disabled 
                             selected>สีแดง</option>
+                            <option>สีชมพู</option>
+                            <option>สีส้ม</option>
+                            <option>สีเหลือง</option>
+                            <option>สีเขียว</option>
+                            <option>สีฟ้า</option>
+                            <option>สีน้ำเงิน</option>
+                            <option>สีม่วง</option>
+                            <option>สีดำ</option>
+                            <option>สีน้ำตาล</option>
+                            <option>สีเทา</option>
+                            <option>สีขาว</option>
                         </select>
                     </td>
                 </tr>
@@ -86,10 +97,9 @@
             <tr>
                 <td>
                     <input type="reset"
-                            value="Reset">
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            value="Reset"style="margin-right:140px;">
                     <input type="submit"
-                            value="submit">
+                            value="Submit">
                 </td>
             </tr>
         </form>
