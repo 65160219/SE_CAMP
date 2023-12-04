@@ -12,9 +12,23 @@ h1{
     font-family: 'Times New Roman', Times, serif;
 } 
 .coRed{
-    color: red;
+    color: #ff2fff;
+    color: rgb(0,255,0);
+    color: hsl(9, 50%, 50%);
+}
+.h1{
+    font-size: 16pt;
+}
+#myP{
+    font-size: 48pt;
 }
 hr{
     color: red ;
     border: 2px solid;
 } /*hr เส้น*/
+.box{
+    width: 400px;
+    height: 400px;
+    color: rgba(255, 30, 45, 0.5);
+    background-color: #ff2fff;
+}
