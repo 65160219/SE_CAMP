@@ -8,7 +8,13 @@ h1{
     font-size: 16;
     color: blue;
 }
+.myfont{
+    font-family: 'Times New Roman', Times, serif;
+} 
+.coRed{
+    color: red;
+}
 hr{
     color: red ;
     border: 2px solid;
-}
+} /*hr เส้น*/
