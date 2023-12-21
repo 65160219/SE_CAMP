@@ -96,5 +96,20 @@
         : <?php echo $key; ?>
         : <?php echo $value; ?></h3>
     <?php } ?>
+    <?php
+       prE($arry) 
+    ?>
+    <?php
+    function pre($value){
+        echo "<pre1>";
+        print_r($value);
+        echo "</pre>";
+    }
+    //function pRe($value){
+        //echo "<pre>2";
+        //print_r($value);
+        //echo "</pre>";
+    //}
+    ?> 
 </body>
 </html>
