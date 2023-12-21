@@ -46,7 +46,7 @@
         <?php echo $var_c = "Hello World $var_a"?>
         <br>
         <?php 
-        $var_c += $var_b = 1;
+        $var_c = $var_b = 1;
         $var_c = '1';
         echo $var_b <=> $var_c;
         echo "<br>";
