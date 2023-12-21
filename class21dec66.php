@@ -91,7 +91,7 @@
     <h3><?php echo $arry2[$i]; ?></h3>
     <?php } ?>
 
-    <?php foreach($arry2 as $key => $value){?>
+    <?php foreach($arry2 As $key => $value){?>
     <h3><?php echo $arry2[$key]; ?> 
         : <?php echo $key; ?>
         : <?php echo $value; ?></h3>
