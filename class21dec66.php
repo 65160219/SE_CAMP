@@ -46,15 +46,17 @@
         <?php echo $var_c = "Hello World $var_a"?>
         <br>
         <?php 
-        $var_c += $var_b = 1
+        $var_c += $var_b = 1;
         $var_c = '1';
-        if($var_b === $var_c){ 
+        echo $var_b <=> $var_c;
+        echo "<br>";
+        If($var_b === $var_c){ 
             //true
             echo '$var_b === $var_c';
-        }else if($var_b <> $var_c){ 
+        }elSe iF($var_b <> $var_c){ 
             //true
             echo '$var_b <> $var_c';
-        }else{
+        }Else{
             //false
             echo 'else';
         } ?>
