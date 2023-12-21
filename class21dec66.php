@@ -39,8 +39,8 @@
     </head>
     <body>
         <h1><?php echo "Hello World<br><br>";?></h1>
-        <?php echo "Hello World<br><br></h1>"?>
-        <?php $var_a="SE CAMP"?>
+        <?php echo "<h1>Hello World<br><br></h1>"?>
+        <?php $var_a = "SE CAMP"?>
         <?php echo $var_b = 'Hello World $var_a'?>
         <br>
         <?php echo $var_c = "Hello World $var_a"?>
@@ -53,7 +53,9 @@
         If($var_b === $var_c){ 
             //true
             echo '$var_b === $var_c';
-        }elSe iF($var_b <> $var_c){ 
+        }elSe 
+        
+        iF($var_b <> $var_c){ 
             //true
             echo '$var_b <> $var_c';
         }Else{
@@ -61,7 +63,27 @@
             echo 'else';
         } ?>
         <br>
-        <?php echo $var_c = 2;?>
+        <?php 
+        echo $var_c = 2; ?>
         <br>
-        <?php echo $var_c?>
-    </body>
+        <?php 
+        echo $var_c;
+        echo "<br>";
+        switch($var_c){
+            caSE 1:
+                EcHo "1";
+                break;
+            default:
+                echo "test";
+        }
+        $arry = array(1,2,3);
+        $arry1= [1,2,3];
+        $arry2[] = 1;
+        $arry2[] = 2;
+        $arry2[] = 3;
+    ?>  <?php print_r($arry);?>
+        <pre><?php print_r($arry);?></pre>   
+        <pre><?php print_r($arry1);?></pre>      
+        <pre><?php print_r($arry2);?></pre> 
+</body>
+</html>
