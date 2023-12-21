@@ -82,7 +82,7 @@
         $arry2[] = 2;
         $arry2[] = 3;
         $arry2[] = "Hello";
-        $arry2['SE'] = "World";
+        $arry2[] = "World";
     ?>  <?php print_r($arry);?>
         <pre><?php print_r($arry);?></pre>   
         <pre><?php print_r($arry1);?></pre>      
