@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//เนื้อหา 25-12-66
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,4 +31,16 @@ Route::get('/my-route',function(){
 Route::post('/my-route', function(Request $req){
     $data['myinput'] = $req->input('myinput');
     return view('myroute', $data);
+});
+*/
+
+//HW4
+Route::get('/my-route',function(){
+    $data = ['Multiplication' => 'แม่สูตรคูณ'];
+    return view('myfolder.HW4_Input',$data);
+});
+
+Route::post('/my-route', function(Request $req){
+    $data['input'] = $req->input('input');
+    return view('HW4_Output', $data);
 });
