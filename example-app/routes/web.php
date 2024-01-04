@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\MyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -13,8 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//เนื้อหา 4-1-66
+Route::get('/my-controller', [MyController::class, 'index']);
+
+Route::get('/my-controller2', 'App\Http\Controllers\MyController@index');
+Route::namespace('App\Http\Controllers')->group(function(){
+    Route::get('/my-controller3', 'MyController@index');
+    Route::post('/my-controller3-post', 'MyController@index');
+});
+
+Route::resource('/my-controller4', MyController::class);
+
+
+
+
+
 //เนื้อหา 25-12-66
-/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,8 +47,9 @@ Route::post('/my-route', function(Request $req){
     $data['myinput'] = $req->input('myinput');
     return view('myroute', $data);
 });
-*/
 
+
+/*
 //HW4
 Route::get('/my-route',function(){
     $data = ['Multiplication' => 'แม่สูตรคูณ'];
@@ -44,3 +60,4 @@ Route::post('/my-route', function(){
     $data['input'] = $req->input('input');
     return view('HW4_Output', $data);
 });
+*/
