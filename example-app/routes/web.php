@@ -40,14 +40,7 @@ Route::get('/my-route',function(){
     return view('myfolder.HW4_Input',$data);
 });
 
-/*
-Route::post('/my-route', function(Request $req){
-    $data['input'] = $req->input('input');
-    return view('HW4_Output', $data);
-});
-*/
-
 Route::post('/my-route', function(){
     $data['input'] = $req->input('input');
-    return view('HW4_Input', $data);
+    return view('HW4_Output', $data);
 });
