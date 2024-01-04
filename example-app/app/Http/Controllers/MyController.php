@@ -16,9 +16,12 @@ class MyController extends Controller
     public function index(){
         //echo $this->myvar;
         //return view('welcome');
+        /*
         $data = ['val_a' => 'Hello World!'];
         $data['val_b'] = "Laravel";
         return view('myfolder.mypage',$data);
+        */
+        return view('home');
     }
 
     public function store(Request $req){
