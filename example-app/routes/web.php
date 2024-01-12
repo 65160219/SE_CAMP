@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //เนื้อหา 4-1-66
-/*
+
 Route::get('/my-controller', [MyController::class, 'index']);
 
 Route::get('/my-controller2', 'App\Http\Controllers\MyController@index');
@@ -25,7 +25,7 @@ Route::namespace('App\Http\Controllers')->group(function(){
 });
 
 Route::resource('/my-controller4', MyController::class);
-*/
+
 
 
 
@@ -53,6 +53,7 @@ Route::post('/my-route', function(Request $req){
 
 
 /* HOMEWORK 4 Author : Miss Duangkamon Lueariyasap ID : 65160219 SEC : 1 */
+/*
 Route::get('/my-result',function(){
     $data = ['Multiplication' => 'แม่สูตรคูณ'];
     return view('myfolder.HW4_Input',$data);
@@ -61,3 +62,4 @@ Route::post('/my-result', function(Request $req){
     $data['input'] = $req->input('input');
     return view('HW4_Output', $data);
 });
+*/
