@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Homepage')
+@section('title', '#12')
 
 @section('content')
     <!-- Content Header (Page header) -->
