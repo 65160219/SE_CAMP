@@ -1,7 +1,8 @@
 <?php
 
 
-
+use App\Http\Controllers\MyAuth;
+use App\Models\User;
 use App\Http\Controllers\MyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,18 @@ use App\Http\Controllers\C_titles;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//29-1-66
+Route::get('/login',[MyAuth::class, 'login_view']);
+Route::get('/register',[MyAuth::class, 'registe_view']);
+Route::get('/logout',[MyAuth::class, 'logout_process']);
+Route::get('/login',[MyAuth::class, 'login_process']);
+Route::get('/login',[MyAuth::class, 'registe_process']);
+
+Route::resource('titles', C_titles::class)->middleware('auth');
+Route::middleware('auth')->group(function () {
+//auth first
+});
 
 //15-1-66
 Route::resource('titles', C_titles::class);
@@ -71,3 +84,5 @@ Route::post('/my-result', function(Request $req){
     return view('HW4_Output', $data);
 });
 */
+
+
