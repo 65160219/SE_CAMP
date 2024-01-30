@@ -1,13 +1,18 @@
 <?php
 
-
+use App\Http\Controllers\C_titles;
+use App\Http\Controllers\MyAuth;
+use App\Http\Controllers\MyController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+/*
 use App\Http\Controllers\MyAuth;
 use App\Models\User;
 use App\Http\Controllers\MyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\C_titles;
-
+*/
 /*
 |--------------------------------------------------------------------------
 | Web Routes
