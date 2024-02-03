@@ -3,6 +3,7 @@
 use App\Http\Controllers\C_titles;
 use App\Http\Controllers\MyAuth;
 use App\Http\Controllers\MyController;
+use App\Http\Controllers\HW5_Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
@@ -37,7 +38,12 @@ Route::middleware('auth')->group(function(){
 });
 
 //15-1-66
+/*
 Route::resource('titles', C_titles::class);
+*/
+
+/* HOMEWORK 5 Author : Miss Duangkamon Lueariyasap ID : 65160219 SEC : 1 */
+Route::get('/my-form', [HW5_Controller::class, 'index']);
 
 //เนื้อหา 4-1-66
 /*
