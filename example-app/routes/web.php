@@ -63,11 +63,11 @@ Route::resource('/my-controller4', MyController::class);
 
 
 //เนื้อหา 25-12-66
-/*
+
 Route::get('/', function () {
     return view('welcome');
 });
-
+/*
 Route::get('/my-route',function(){
     //echo "<h1>My Route Page</h1>";
     //return view('myroute');
