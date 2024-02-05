@@ -238,13 +238,9 @@
                         </li>
                         <br>
                         <!--add logout button-->
-                        <li class="nav-item">
-                            <a href="logout" class="nav-link active" style="background-color: #ff0000" >
-                                <p style="color: rgb(255, 255, 255)">
-                                     Log out
-                                </p>
-                            </a>
-                        </li>
+                        <a href="logout" class="btn btn-lg" style="background-color: red; color:aliceblue;">
+                            <span class="glyphicon glyphicon-log-out" ></span> Log out
+                        </a>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
