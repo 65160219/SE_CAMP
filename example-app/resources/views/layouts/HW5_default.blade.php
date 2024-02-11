@@ -1,20 +1,17 @@
+<!-- HOMEWORK 5 Author : Miss Duangkamon Lueariyasap ID : 65160219 SEC : 1 */ -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SE CAMP | @yield('title', '#12')</title>
-
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{ url('assets/dist/css/adminlte.min.css') }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HOMEWORK | @yield('title', '#5')</title>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
 </head>
-
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
@@ -167,9 +164,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="{{ url('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+                <img src="{{ url('assets/dist/img/SE BUU.jpg') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">SE CAMP</span>
             </a>
 
             <!-- Sidebar -->
@@ -177,11 +174,11 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ url('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                        <img src="{{ url('assets/dist/img/UserLucky.jpg') }}" class="img-circle elevation-2"
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">65160219</a>
                     </div>
                 </div>
 
@@ -236,11 +233,6 @@
                                 </p>
                             </a>
                         </li>
-                        <br>
-                        <!--add logout button-->
-                        <a href="logout" class="btn btn-lg" style="background-color: red; color:aliceblue;">
-                            <span class="glyphicon glyphicon-log-out" ></span> Log out
-                        </a>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -250,7 +242,7 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            @yield('content')
+            @yield('form')
         </div>
         <!-- /.content-wrapper -->
 
@@ -288,3 +280,4 @@
 </body>
 
 </html>
+
