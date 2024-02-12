@@ -106,7 +106,7 @@
 <html>
 
 <head>
-    <title>HOMEWORK 7</title>
+    <title>HOMEWORK-7</title>
 </head>
 <body>
     <h1>ตารางสูตรคูณ</h1>
