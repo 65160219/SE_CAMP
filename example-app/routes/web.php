@@ -59,7 +59,9 @@ Route::resource('/my-controller4', MyController::class);
 */
 
 
-
+Route::get('/HW7', function () {
+    return view('HW7');
+});
 
 
 //เนื้อหา 25-12-66
@@ -67,6 +69,7 @@ Route::resource('/my-controller4', MyController::class);
 Route::get('/', function () {
     return view('welcome');
 });
+
 /*
 Route::get('/my-route',function(){
     //echo "<h1>My Route Page</h1>";
