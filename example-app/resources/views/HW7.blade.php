@@ -6,13 +6,17 @@
 </head>
 <body>
     <h1>ตารางสูตรคูณ</h1>
-    <input type="text" id="my_number" value="">
-    <button onclick="myFunction(my_number)">submit</button>
+    <input type="text" id="my_number" value="10">
+    <button onclick="myFunction()">submit</button>
     <script>
-    function myFunction(my_number){
-        for(let i=1;i<=10;i++){
-            console.log(1 + "x" + i + "=" + my_number*i);
+        function myFunction(){
+        var my_number = parseInt($('#my_number').val())
+        var item = "";
+        var v = document.getElementById("value");
+        for( var i=1; i<=12; i++ ) {
+            item = item + b+" x "+i+" = "+( b * i )+"<br/>";
         }
+        v.innerHTML = item;
     }
     </script>
 </body>
