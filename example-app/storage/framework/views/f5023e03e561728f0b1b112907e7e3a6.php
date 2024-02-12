@@ -1,5 +1,37 @@
 <?php $__env->startSection('title', 'Titles'); ?>
-
+<?php $__env->startSection('js'); ?>
+    <script>
+        function deleteme(id) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        method: "POST",
+                        url: "/titles/" + id,
+                        data: {
+                            _token: "<?php echo e(csrf_token()); ?>",
+                            _method: "DELETE"
+                        }
+                    })
+                    .done(function(data) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -92,10 +124,12 @@
                                         <td>
                                             <a href="<?php echo e(url('/titles/' . $title->tit_id)); ?>"
                                                 class="btn btn-warning">แก้ไข</a>
-                                            <form method="post" action="/titles/<?php echo e($title->tit_id); ?>">
+                                            <button type="submit" class="btn btn-danger"
+                                                onclick="delete(<?php echo e($title->tit_id); ?>)">ลบ</button>
+                                            <form id="form_delete_<?php echo e($title->tit_id); ?>" method="post"
+                                                action="/titles/<?php echo e($title->tit_id); ?>">
                                                 <?php echo csrf_field(); ?>
                                                 <?php echo method_field('DELETE'); ?>
-                                                <button type="submit" class="btn btn-danger">ลบ</button>
                                             </form>
                                         </td>
                                     </tr>

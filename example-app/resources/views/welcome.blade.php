@@ -1,4 +1,3 @@
-<!--
 <!doctype html>
 <html>
 
@@ -100,5 +99,3 @@
     </script>
 </body>
 </html>
--->
-

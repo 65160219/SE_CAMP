@@ -25,6 +25,7 @@ use App\Http\Controllers\C_titles;
 |
 */
 
+
 //29-1-66
 Route::get('/login', [MyAuth::class, 'login_view'])->name('login');
 Route::get('/register', [MyAuth::class, 'register_view']);
