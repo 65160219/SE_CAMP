@@ -25,6 +25,12 @@ use App\Http\Controllers\C_titles;
 |
 */
 
+// HOMEWORK 7 Author : Miss Duangkamon Lueariyasap ID : 65160219 SEC : 1
+Route::get('/HW7', function () {
+    return view('HW7');
+});
+
+
 //29-1-66
 Route::get('/login', [MyAuth::class, 'login_view'])->name('login');
 Route::get('/register', [MyAuth::class, 'register_view']);
@@ -57,11 +63,6 @@ Route::namespace('App\Http\Controllers')->group(function(){
 
 Route::resource('/my-controller4', MyController::class);
 */
-
-
-Route::get('/HW7', function () {
-    return view('HW7');
-});
 
 
 //เนื้อหา 25-12-66
