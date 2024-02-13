@@ -1,3 +1,4 @@
+<!-- HOMEWORK 7 Author : Miss Duangkamon Lueariyasap ID : 65160219 SEC : 1 -->
 <!DOCTYPE html>
 <html>
 
@@ -16,6 +17,7 @@
     <button onclick="myFunction()" style="background-color: rgb(0, 94, 0); color:aliceblue; padding: 10px; font-size: 18px">submit</button>
     </h2>
     <br>
+
     <p id="show"></p>
 
     <script>
@@ -30,8 +32,8 @@
             }
         }
     </script>
-
 </body>
+
 <style>
     h1 {
         font-family: 'Mitr', sans-serif;
