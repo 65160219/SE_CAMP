@@ -287,6 +287,7 @@
     <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script>
+    @yield('js')
 </body>
 
 </html>
