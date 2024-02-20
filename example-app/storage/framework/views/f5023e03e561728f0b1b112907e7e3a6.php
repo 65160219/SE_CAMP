@@ -13,23 +13,65 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        method: "POST",
-                        url: "/titles/" + id,
-                        data: {
-                            _token: "<?php echo e(csrf_token()); ?>",
-                            _method: "DELETE"
-                        }
-                    })
-                    .done(function(data) {
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
+                            method: "POST",
+                            url: "/titles/" + id,
+                            data: {
+                                _token: "<?php echo e(csrf_token()); ?>",
+                                _method: "DELETE"
+                            }
+                        })
+                        .done(function() {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            getData();
                         });
-                    });
                 }
             });
         }
+
+        function getData() {
+
+            var value_my_tbody = `<tr>
+                                        <td colspan="4" style="text-align: center;">
+                                            <img src="<?php echo e(url('/assets/dist/img/loading.gif')); ?>" />
+                                        </td>
+                                    </tr>`
+            $('#my_tbody').html(value_my_tbody)
+            value_my_tbody = ``
+            setTimeout(() => {
+                $.ajax({
+                        method: "GET",
+                        url: "api/titles/"
+                    })
+                    .done(function(data) {
+                        console.log("data", data[0].tit_id)
+                        data.forEach((val, index) => {
+                            value_my_tbody += `<tr>
+                                        <td>${index+1}.</td>
+                                        <td>${val.tit_name}</td>
+                                        <td>
+                                            ${val.tit_is_active}
+                                            <img src="<?php echo e(url('/storage')); ?>/${val.tit_image.replace('public/','')}">
+                                        </td>
+                                        <td>
+                                            <a href="<?php echo e(url('/titles/')); ?>/${val.tit_id}"
+                                                class="btn btn-warning">แก้ไข</a>
+                                            <button type="button" class="btn btn-danger"
+                                                onclick="deleteme(${val.tit_id})">ลบ</button>
+                                        </td>
+                                    </tr>`;
+                        })
+                        $('#my_tbody').html(value_my_tbody)
+                    })
+            }, 2000);
+
+
+
+        }
+        getData();
     </script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -38,7 +80,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">SE CAMP : <?php echo e(session('key')); ?> : <?php echo e(Auth::user()->name); ?></h1>
+                    <h1 class="m-0">SE CAMP</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -64,7 +106,7 @@
                         <!-- form start -->
                         <form action="/titles<?php if (isset($title_id)) {
                             echo '/' . $title_id->tit_id;
-                        } ?>" method="post">
+                        } ?>" method="post" enctype="multipart/form-data">
                             <?php if (isset($title_id)) { ?>
                             <?php echo method_field('PUT'); ?>
                             <?php } ?>
@@ -82,6 +124,16 @@
                                                 $title_id->tit_is_active == 1){?> checked
                                         <?php }?> class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">ใช้งาน</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">File input</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="tit_image" class="custom-file-input"
+                                                id="exampleInputFile">
+                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->
@@ -112,28 +164,8 @@
                                         <th>เครื่องมือ</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <?php foreach($titles as $index => $title) {?>
-                                    <tr>
-                                        <td><?php echo e($index + 1); ?>.</td>
-                                        <td><?php echo e($title->tit_name); ?></td>
-                                        <td>
-                                            <?php echo e($title->tit_is_active); ?>
+                                <tbody id="my_tbody">
 
-                                        </td>
-                                        <td>
-                                            <a href="<?php echo e(url('/titles/' . $title->tit_id)); ?>"
-                                                class="btn btn-warning">แก้ไข</a>
-                                            <button type="submit" class="btn btn-danger"
-                                                onclick="delete(<?php echo e($title->tit_id); ?>)">ลบ</button>
-                                            <form id="form_delete_<?php echo e($title->tit_id); ?>" method="post"
-                                                action="/titles/<?php echo e($title->tit_id); ?>">
-                                                <?php echo csrf_field(); ?>
-                                                <?php echo method_field('DELETE'); ?>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>

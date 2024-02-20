@@ -1,5 +1,5 @@
 <?php
-use App\Model\M_titles;
+use App\Models\M_titles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
