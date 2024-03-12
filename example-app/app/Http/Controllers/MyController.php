@@ -2,26 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\M_titles;
 use Illuminate\Http\Request;
-
 class MyController extends Controller
 {
-    private $myvar = "Hello World";
+    private $myvar = "Hello World!";
 
-    function _construct() //MyController
+    function __construct() //MyController
     {
 
     }
 
     public function index(){
-        //echo $this->myvar;
-        //return view('welcome');
-        /*
-        $data = ['val_a' => 'Hello World!'];
-        $data['val_b'] = "Laravel";
-        return view('myfolder.mypage',$data);
-        */
-        return view('home');
+        $mtl = new M_titles;
+        $result = $mtl->get_all_title();
+        //  $result = Db::raw("SELECT * FROM titles");
+        print_r($result);
+        // return view('home');
     }
 
     public function store(Request $req){
